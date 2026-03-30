@@ -1,0 +1,7 @@
+SELECT 
+  symbol, 
+  price, 
+  TIMESTAMP_SECONDS(CAST(FLOOR(CAST(timestamp AS FLOAT64)) AS INT64)) as time_fixed 
+FROM `your-project.your_dataset.btc_prices` 
+ORDER BY timestamp DESC 
+LIMIT 20;
